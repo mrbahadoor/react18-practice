@@ -1,23 +1,19 @@
-// import { Fragment } from "react";
+import { MouseEvent } from "react";
 
 function ListGroup() {
     const items:string[] = [
-        // 'New York',
-        // 'Los Angeles',
-        // 'Chicago',
-        // 'Houston',
-        // 'Phoenix',
-        // 'Philadelphia',
-        // 'San Antonio',
+        'New York',
+        'Los Angeles',
+        'Chicago',
+        'Houston',
+        'Phoenix',
+        'Philadelphia',
+        'San Antonio',
     ];
 
-    // const message = items.length === 0 ? <p>No items to display</p> : null;
+    // Event handler
+    const handleClick = (event:MouseEvent) => console.log(event); 
 
-    // const getMessage = () => {
-    //     return items.length === 0 ? <p>No items to display</p> : null;;
-    // }
-
-    // Use {..} to render items dynamically in JSX otherwise only html/xml allowed 
     return (
     <>
         <h1>List</h1>
@@ -25,7 +21,7 @@ function ListGroup() {
         { items.length === 0 && <p>No items to display</p> }
         <ul className="list-group">
             {items.map((item, index) => (
-                <li key={index} className="list-group-item">
+                <li key={index} className="list-group-item" onClick={ handleClick }>
                     {item}
                 </li>
             ))}
